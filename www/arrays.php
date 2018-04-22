@@ -84,3 +84,18 @@ foreach($articles_four as $article_name){
     //code block that will add a comma after each element of the array.
     echo $article_name, ', ';
 }//do not need a semi-colon after a code block.
+
+//Quiz 2 and recap
+//arrays in php can have as many elements as the user likes
+//arrays in php are 0 indexed, meaning each element in an array is assigned an index, starting with the first element that has an index of 0.
+//arrays can be created using bracket notation, and invoking the array function 
+    //$array = [], $array = array()
+//arrays can be manually assigned indexes: $array = [1=>one].
+    //these indexes can be integers or strings.
+    //arrays using string indexes are known as associative arrays.
+//to access nested elements in a multidimensional array, use double bracket notation
+    //$array[0]['name'] will access the 'name' element of the 0 indexed element of the parent array.
+//use the simple foreach loop to perform actions on individual array elements
+    //foreach($array as $array){ code block}
+    //first pass in the array, and then assign a variable each element will be assigned to on each loop iteration
+    //then provide a code block which describes an action to be taken on each iteration of the loop
