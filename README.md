@@ -17,4 +17,6 @@ Follows Udemy php for beginners course step by step.
         f. the for loop
         g.the else/if construct
         h. switch statement
-        
+
+    4. Basic HTML
+    5. PHP & HTML
