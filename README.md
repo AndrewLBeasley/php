@@ -20,3 +20,5 @@ Follows Udemy php for beginners course step by step.
 
     4. Basic HTML
     5. PHP & HTML
+        a. basics of using php inside html
+        b. using php control structures inside of html.

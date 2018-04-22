@@ -1,6 +1,7 @@
 <?php
     //declare variable of name for use in the HTML below. 
     $name = 'Andrew';
+    $hour = 12;
 ?>
 
 <!DOCTYPE html>
@@ -16,5 +17,21 @@
 <!-- to write php inside of html, declare php using the php tag -->
 <!-- can use the short echo tag to print php inside of your html -->
     <p> Hello, <?= $name;?>!</p>
+
+<!-- to use php controll structures inside of html, declare each part of the structure as php -->
+<!-- instead of echoing the result after the code block, leave if out of the php tag to be rendered as html -->
+<!-- to end the controll strucutre inside the html, use endif, endwhile, or endfor -->
+<!-- the echod portion of the control structure can also be manipulated as html. echod strings can become <h2> etc -->
+        <?php if($hour<12): ?>
+            good morning
+        <?php elseif($hour<18): ?>
+            good afternoon
+        <?php elseif($hour<22): ?>
+            good evening
+        <?php else: ?>
+            good night
+        <?php endif; ?>
+    
+   
 </body>
 </html>
