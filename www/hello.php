@@ -24,10 +24,20 @@ $price = 0.23;
 echo $message;
 
 
-//var_dump is a php function that prints a number value with it's details, eg integer or float.
+//var_dump is a php function that prints a variable value with its details.
 //useful if you want to see what a variable contains.
 var_dump($count);
 var_dump($price);
 
 
 //php is a loosely typed language. you do not have to declare a variables type. php interprets the type itself.
+
+//variables can also contain boolean values: true or false.
+//useful for controlling program flow.
+// variables can also be null. variables that have no values, or have not been assigned values.
+
+$is_admin = true;
+$data = null;
+
+//can pass multiple variables into the var_dump function.
+var_dump($is_admin, $data);
