@@ -41,3 +41,29 @@ $data = null;
 
 //can pass multiple variables into the var_dump function.
 var_dump($is_admin, $data);
+
+
+//php also uses typical mathematical operators such as * + /
+//var_dump will automatically evaluate values after operations. This operation will resolve to float after an integer and a float have been multiplied
+var_dump($count*$price);
+
+
+//php uses the . operator to concatenate string values. Unlike javascript which uses + to concatenate.
+//can use the . operator more than once. 
+$name = 'Andrew';
+echo $message .''. $name;
+
+//when performing operations on variables with different values, php will type juggle the result to try to determine the new type.
+//this operation will result in a new value of int, and reassign the value of $int_string to the type of int.
+$int_string = '150';
+$quantity = 3;
+$int_string = $int_string*$quantity;
+var_dump($int_string);
+
+//php will re-assign boolean values using !.
+//var_dump(!is_editor) will re-assign the value of $is_editor to false.
+//php also uses and, or, xor to evaluate boolean values.
+//var_dump($is_editor or &is_administrator) will evaluate true.
+$is_editor = true;
+$is_administrator = false;
+var_dump($is_editor);
