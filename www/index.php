@@ -2,6 +2,13 @@
     //declare variable of name for use in the HTML below. 
     $name = 'Andrew';
     $hour = 12;
+
+    $articles = [
+        ['title' => 'first', 'content' => 'first post'], 
+        ['title' => 'second', 'content' => 'second post'],
+        ['title' => 'third', 'content' => 'third post']
+        
+    ];
 ?>
 
 <!DOCTYPE html>
@@ -36,5 +43,20 @@
         <!-- to close an open php tag, use ?> -->
         <!-- to echo a php message with shorthand, use the php echo shorthand -->
         <!-- to use php alternative syntax in html, enclose control structure in a php tag, and end the structure with a : -->
+
+
+        <!-- example of how to use php to loop over arrays and display the array content in html -->
+        <ul>
+        <?php foreach($articles as $article): ?>
+            <li>
+                <article>
+                    <h2><?=$article['title'];?></h2>
+                    <h2><?=$article['content'];?></h2>
+                </article>
+            </li>
+            <?php endforeach; ?>
+        </ul>   
+
+
 </body>
 </html>

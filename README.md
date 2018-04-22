@@ -24,4 +24,6 @@ Follows Udemy php for beginners course step by step.
         b. using php control structures inside of html.
         c. whitespace and comments inside of html
         d. comments and coding standards within php.
-        
+
+    6. introduction to databases
+        a. intro, displaying array data in html.
