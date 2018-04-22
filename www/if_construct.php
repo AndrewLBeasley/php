@@ -81,7 +81,22 @@ $month = 1;
 //checks the condition upon each iteration. 
 //will echo the value of $month, and add one to the value of $month each time the loop executes.
 //the loop will exit once the condition is false, and the value of $month is greater than 12.
-while($month<=12){
-    echo $month . ', ';
-    $month = $month + 1;
+// while($month<=12){
+//     echo $month . ', ';
+//     $month = $month + 1;
+// }
+
+//forloop will execute code a specific number of times, when you know in advance how many times you want the loop to run . 
+//the for loop is based on a counter. the counter dictates how many times the code in the loop is executed. 
+    //initiate the for loop with an initial value of the counter. 
+    //specify a test for the loop. if the test restult is true, the code block is executed. 
+    //add a change statement which changes the counters value after each iteration of the loop
+        // for(init; test; change){
+        //     code to run while test is true;
+        // }
+
+//counter initialized at 1, test to see if the counter is less than or equal to 10, add 1 to the counter each time the loop iterates. 
+//print the value of $i each time the loop is executed. 
+for($i = 1; $i<=10; $i++){
+    echo $i . ', ';
 }

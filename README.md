@@ -7,10 +7,11 @@ Follows Udemy php for beginners course step by step.
         b. multidimensional arrays/accessing nested elements
         c. loops
             1c. the foreach loop
-    3. The if construct
+    3. The if construct and other operation constructs 
         a. if statement and control structure
             1a. conditions and executeable code block.
         b. empty() function.
         c. else for false conditions
         d. conditional operators and their use as if/else statement conditions
         e. the while loop
+        f. the for loop
