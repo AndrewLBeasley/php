@@ -157,3 +157,16 @@ switch($day){
         echo 'no information';
         break;
 }
+
+//Quiz and recap
+//if statements take in a condition, and if that condition is true, the given code block is executed.
+    //if statements can include a default else case that is executed if the given condition is not true. 
+//if statements can take in conditions that are comparisons made with comparison operators.
+    //if the comparison results in true, then the given code block is executed. 
+    //if($number == 40){ code block }
+//while loops are loops that are executed as long as a given condition remains true.
+    //as long as the condition is true, the give code block is executed.
+    //if there is no way for a condition to result in false, the while loop will execute infinantly.
+//the else in an if or else if statement is the default statement, and will only execute if no other conditions can be met. 
+//if there is no break statement provided in the code blocks of a switch statement, all the code after a met case will be executed. 
+//switch cases can be given a default case that will execute when no other cases match the given case. 
