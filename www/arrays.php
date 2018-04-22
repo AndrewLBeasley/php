@@ -11,11 +11,11 @@ $articles = ['first', 'second', 'third'];
 
 //cannot use echo to display arrays.
 //using var_dump will list the array values, their index, and their type.
-var_dump($articles); //array(3) { [0]=> string(5) "first" [1]=> string(6) "second" [2]=> string(5) "third" }
+// var_dump($articles); //array(3) { [0]=> string(5) "first" [1]=> string(6) "second" [2]=> string(5) "third" }
 
 //access individual elements using bracket notation and the elements index.
 //accessing an array element with an invalid index will cause an error.
-var_dump($articles[0]);
+// var_dump($articles[0]);
 
 
 
@@ -26,9 +26,41 @@ var_dump($articles[0]);
 //if using a combination of strings and integers to index, integer indexed elements following a string indexed element will
     //be automatically assigned an integer index that follows the most previous integer indexed element.
 //elements indexed with a string are also accessed using bracket notation, ['three'].  
-$articles_two = [1=>'first', 
-                'three'=>'second', 
-                'third'];//'third' will be assigned index of 2.
+// $articles_two = [1=>'first', 
+//                 'three'=>'second', 
+//                 'third'];//'third' will be assigned index of 2.
 
-var_dump($articles_two['three']);//prints element with index of 'three'.
+//var_dump($articles_two['three']);//prints element with index of 'three'.
 
+
+//array elements can have values of any type.
+//can also assign other variables as elements of an array.
+
+$count = 3;
+$price = 9.99;
+$values = [
+    'message' => 'Hello world', 
+    'count' => 150,
+    'pi' => 3.14,
+    'status' => false, 
+    'result' => null,
+    $count, 
+    $price
+];
+//  var_dump($values);
+
+//elements of an array can also be other arrays.
+//multidimensional arrays are useful for representing tables of data.
+//can create an array using a variable for each array element, $people = [$Lucy, $Andrew, $Imo];
+    //each of these elements represents a previously created array of that persons data.
+    //could create the same $people array using each individuals array.
+//to access elements in multidimensional arrays, use double bracket notation
+    //the first bracket represents the parents element, the second represents the child element
+    // $people[2]['name] would return the child element of 'name' from the parent element 'Imo'.
+
+$articles_three = [
+    ['title' => 'first post', 'content' => 'this is the first post'], 
+    ['title' => 'second post', 'content' => 'this is the second post'],
+    ['title' => 'third post', 'content' => 'this is the third post']
+];
+var_dump($articles_three[1]['title']); //will return string(11) "second post".
