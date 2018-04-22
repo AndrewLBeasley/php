@@ -16,3 +16,5 @@ Follows Udemy php for beginners course step by step.
         e. the while loop
         f. the for loop
         g.the else/if construct
+        h. switch statement
+        

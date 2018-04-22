@@ -121,3 +121,39 @@ $hour = 14;
      echo 'good night';
  }
 
+
+//the switch statement can compare a variable or value to many different valeus, and will execute code based on that comparison. 
+//establish a switch statement by passing a condition into switch($condition).
+    //follow this with a case to be met by the condition, case 'condition'
+    //and then a block of code to be executed if that case is met, echo 'condition'
+
+//once a case within the switch statement has been met, the code will execute for every other case that comes after the met case. 
+//to exit the switch statement once a case has been met, at a break statement to the end of each code block. 
+//give the switch statement a default case that will execute if no other case in the statement has been met. 
+
+$day = 'Tue';
+switch($day){
+    case 'Mon';
+        echo 'Monday';
+        break;
+
+    case 'Tue';
+        echo 'Tue';
+        break;
+
+    case 'Wed';
+        echo 'Wed';
+        break;
+
+    case 'Thu';
+        echo 'Thu';
+        break;
+
+    case 'Fri';
+        echo 'Fri';
+        break;
+    
+    default:
+        echo 'no information';
+        break;
+}
