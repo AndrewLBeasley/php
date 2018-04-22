@@ -41,3 +41,28 @@ if(empty($articles)){
         echo 'the array is not empty';
         //block will execute if the passed in variable is not empty
     }
+
+//comparison operators are used to compare two values.
+//comparisons always result in a value of true or false. 
+
+//compares the values of two and four, returns a boolean based on the result of the comparison.
+    // equal == operator will return true if two values are equal.
+    // not equal != operator will return true if two values are not equal.
+    // less than < operator will return true if one value is less than another.
+    // greater than > operator will return true if one value is greater than another. 
+    // greater/less than or equal to will return true if one value is greater/less than or equal to another. 
+
+var_dump(2==4);//will return false, because two is not equal to four. 
+var_dump(3==3);//will return true, because three is equal to three.
+var_dump(3!=4);// will return true, three is not equal to 4.
+var_dump(3<4);//will return true, three is less than 4.
+
+$age = 21;
+
+//if statement using comparison as a condition.
+//code will execute based on comparison of age.
+if($age == 21){
+    echo 'age is true';
+}else{
+    echo 'age is false';
+}

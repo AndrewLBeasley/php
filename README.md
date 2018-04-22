@@ -12,3 +12,4 @@ Follows Udemy php for beginners course step by step.
             1a. conditions and executeable code block.
         b. empty() function.
         c. else for false conditions
+        d. conditional operators and their use as if/else statement conditions
