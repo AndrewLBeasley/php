@@ -72,4 +72,17 @@ $is_editor = true;
 $is_administrator = false;
 var_dump($is_editor);
 
-
+//Quiz 1 and recap
+//php code is executed on the server and the result is displayed in the browser.
+//php code has to start with the <$php opening tag to tell the server to read the code as php.
+//variables can be named using a variety of methods, but cannot be named using a hyphen.
+//to create a variable use $ followed by a name, eg $name. Assign that variable a value like this: $name = 'Andrew';
+//php is loosely typed, meaning you do not have to declare the variable type when assigning a value to a variable.
+//type of string is denoted with quotes. the value of the string is whatever is contained within the quotes.
+//php will type juggle variables when asked to evaluate variables of different types.
+    //concatenating a string and a number will result in a value type of string because a string operator is being used in the evaluation.
+//when creating a string, the same type of quote must be used to open and close the string. when inserting quotes into a string:
+    //a different type of quote must be used, or the string must be escaped using a \.
+//use {} to let php know where a variables ends
+        //echo "the price is {$price}GBP"
+        //echo "the price is $priceGBP" will cause an error because php will not know where $price ends, and where to continue the string
