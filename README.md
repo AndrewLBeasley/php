@@ -15,3 +15,4 @@ Follows Udemy php for beginners course step by step.
         d. conditional operators and their use as if/else statement conditions
         e. the while loop
         f. the for loop
+        g.the else/if construct

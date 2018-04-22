@@ -100,3 +100,24 @@ $month = 1;
 for($i = 1; $i<=10; $i++){
     echo $i . ', ';
 }
+
+//the else/if construct allows for the further expansion of the if construct.
+
+
+
+//elseif allows for several different blocks to be executed depending on the result of the condition.
+//makes a check-down of the elseif statements, and only executes blocks that meet the given condition.
+//the elseif will not continue to run after a block has met the given condition. 
+//can include as many different elseif conditions as you like, the final else is optional . 
+$hour = 14;
+
+ if($hour<12){
+     echo 'good morning';
+ }elseif($hour<18){
+     echo 'good afternoon';
+ }elseif($hour<22){
+     echo 'good evening';
+ }else{
+     echo 'good night';
+ }
+
