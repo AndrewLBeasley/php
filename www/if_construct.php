@@ -62,7 +62,26 @@ $age = 21;
 //if statement using comparison as a condition.
 //code will execute based on comparison of age.
 if($age == 21){
-    echo 'age is true';
+    // echo 'age is true';
 }else{
-    echo 'age is false';
+    // echo 'age is false';
+}
+
+
+//the whileloop can be used for any code, not just for looping arrays.
+//runs code continuously while a condition is true. 
+    // while(condition){
+    //     code to run while condition is true;
+    // }
+//condition must change to false at some point or else the loop will run forever. 
+
+$month = 1;
+
+//while loop with the condition of variable $month being less than or equal to twelve.
+//checks the condition upon each iteration. 
+//will echo the value of $month, and add one to the value of $month each time the loop executes.
+//the loop will exit once the condition is false, and the value of $month is greater than 12.
+while($month<=12){
+    echo $month . ', ';
+    $month = $month + 1;
 }

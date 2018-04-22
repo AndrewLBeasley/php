@@ -13,3 +13,4 @@ Follows Udemy php for beginners course step by step.
         b. empty() function.
         c. else for false conditions
         d. conditional operators and their use as if/else statement conditions
+        e. the while loop
