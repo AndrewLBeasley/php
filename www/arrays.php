@@ -63,4 +63,24 @@ $articles_three = [
     ['title' => 'second post', 'content' => 'this is the second post'],
     ['title' => 'third post', 'content' => 'this is the third post']
 ];
-var_dump($articles_three[1]['title']); //will return string(11) "second post".
+
+//var_dump($articles_three[1]['title']); //will return string(11) "second post".
+
+//Loops allow us to run code on each element of an array, regardless of how many elements it has
+//for arrays in php, the simplest loop to execute is the foreach loop
+
+$articles_four = [
+    'first',
+    'second',
+    'third'
+];
+
+//to create a foreach loop, first pass in the array, and then the name of a variable that each element will be assigned to during each loop iteration.
+    //then assign some code that will execute upon each iteration.
+
+//Read as: for each element($article_name) in the array($articles_four) execute the given code block.
+foreach($articles_four as $article_name){
+    //use the given variable name to assign desired action.
+    //code block that will add a comma after each element of the array.
+    echo $article_name, ', ';
+}//do not need a semi-colon after a code block.
