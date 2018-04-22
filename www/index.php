@@ -31,7 +31,10 @@
         <?php else: ?>
             good night
         <?php endif; ?>
-    
-   
+
+        <!-- Quiz and recap -->
+        <!-- to close an open php tag, use ?> -->
+        <!-- to echo a php message with shorthand, use the php echo shorthand -->
+        <!-- to use php alternative syntax in html, enclose control structure in a php tag, and end the structure with a : -->
 </body>
 </html>
