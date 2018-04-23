@@ -1,6 +1,7 @@
 <?php 
 
 // all of the information needed to connect to the local db
+//use include to save the DB information from the config file to a variable for use in the current file. 
 $database = include('config.php');
 
 $db_host = $database['host'];
@@ -59,16 +60,8 @@ if($results === false){
 }
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+<!-- requires header.php -->
+<?php require 'header.php';?>
 
 <!-- checks to see if there is any content to post. if there is not, the message will display -->
     <?php if($article === null):?>
@@ -81,6 +74,5 @@ if($results === false){
                         </article>
                    
     <?php endif; ?>
-</body>
-
-</html>
+<!-- requires footer.php -->
+    <?php require 'footer.php';?>

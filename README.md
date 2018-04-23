@@ -70,4 +70,4 @@ Follows Udemy php for beginners course step by step.
             b1.using the query string, which is whatever follows ?
        c. Avoiding SQL injection.
        d. extract repeated code. 
-
+            1. including the config file. 
