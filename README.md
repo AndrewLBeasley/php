@@ -63,6 +63,11 @@ Follows Udemy php for beginners course step by step.
             use the MySQL Improved extension mysqli_connect
 
         g. query the database
-        
+
+    7. multiple pages in php
+       a.  creates a copy of the initial db connection and only renders the data of one return
+       b.  passing data in the url 
+            b1.using the query string, which is whatever follows ?
+            
 
 
