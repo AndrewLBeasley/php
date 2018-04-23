@@ -34,3 +34,16 @@ Follows Udemy php for beginners course step by step.
                 3b. choosing utf8mb4_unicode_ci provides the widest range of comaprison sets in every language.
                 4c. choose your collation, and then click create to create a new DB.
             2. create a new secure user account that can work with the DB
+        c. creating the database structure
+            1. database structure is created using tables, each table is made with rows.
+            2. each row represents a record or item. 
+            3. each row is divided into columns, and each column represents a particular piece of information about the row. 
+            4. the information within columns can be represented using various data types. 
+            5. each row has a specific ID column that is usually an integer, known as a primary key.
+                5a. ids are used to specifically reference that row. 
+            6. to create a table, navigate to the new database, enter a table name, and click create table. 
+                1. the id column should be integer, with an index of primary key, and auto incrementing.
+                2. columns that will hold strings should be varchar, or text, with a dilineated length provided. 
+                3. columns assigned as TEXT do not have to have a provided max length. 
+                4. columns that can accept no values should be designated as such
+                
