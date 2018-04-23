@@ -60,6 +60,9 @@ Follows Udemy php for beginners course step by step.
                 2. the name of the DB.
                 3. the username.
                 4. the password.
-            use the MySQL Improved extension
-            
+            use the MySQL Improved extension mysqli_connect
+
+        g. query the database
+        
+
 
