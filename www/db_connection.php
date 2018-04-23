@@ -2,7 +2,7 @@
 
 // all of the information needed to connect to the local db
 //use include to save the DB information from the config file to a variable for use in the current file. 
-$database = include('config.php');
+$database = include('./includes/config.php');
 
 $db_host = $database['host'];
 $db_name = $database['name'];
@@ -48,7 +48,7 @@ if($results === false){
 }
 ?>
 <!-- requires header.php -->
-<?php require 'header.php';?>
+<?php require './includes/header.php';?>
 
 <!-- checks to see if there is any content to post. if there is not, the message will display -->
     <?php if(empty($articles)):?>
@@ -67,7 +67,7 @@ if($results === false){
             </ul>   
     <?php endif; ?>
 <!-- requires footer.php -->
-    <?php require 'footer.php';?>
+    <?php require './includes/footer.php';?>
 
 <!-- DB Quiz and recap -->
 <!-- data in a relational database is represented in tables -->
