@@ -70,4 +70,10 @@ Follows Udemy php for beginners course step by step.
             b1.using the query string, which is whatever follows ?
        c. Avoiding SQL injection.
        d. extract repeated code. 
-            1. including the config file. 
+            1. include or require files that might be used repeatedly throughout code. 
+                Quiz and recap for this section
+                    The query string is the part of the URL that comes after the ?, ?=3.
+                    The superglobal method $_GET returns an array that contains key value pairs from the query string.
+                    All data within a query string is just a string.
+                    Require will stop a script when a file isnt found, include will keep executing the script forever. 
+                    The web server can be configured using directives in .htaccess files
