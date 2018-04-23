@@ -46,4 +46,20 @@ Follows Udemy php for beginners course step by step.
                 2. columns that will hold strings should be varchar, or text, with a dilineated length provided. 
                 3. columns assigned as TEXT do not have to have a provided max length. 
                 4. columns that can accept no values should be designated as such
-                
+        d. SQL
+        e. Making queries faster
+            When making a selection using SQL the entire database is scanned for the data being requested.
+            Indexes can be used to make certain data easier to find because the entire DB doesnt need to be scanned during a query. 
+            DB servers maintain indexes in the background. Once an index is defined, the user doesn need to worry about it anymore. 
+                If an index for a column is created, a query of the DB will automatically search the index as opposed to the entire DB.
+            Indexes also offer a quicker way to return ordered data. Query by index can return data in ascending or descending order. 
+            
+        f. connect to the DB using php
+            To connect to the DB from php, you need 4 pieces of information
+                1. the address or host of the server.
+                2. the name of the DB.
+                3. the username.
+                4. the password.
+            use the MySQL Improved extension
+            
+
