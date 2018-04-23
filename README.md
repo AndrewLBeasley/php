@@ -27,3 +27,10 @@ Follows Udemy php for beginners course step by step.
 
     6. introduction to databases
         a. intro, displaying array data in html.
+        b. database interaction with mySQL/mariaDB
+            To manage your databases if using xxamp, use phpmyadmin.
+            1. From the phpadmin home screen, click databases.
+                2a. enter a name, and choose a collation. a collation is a set of rules for how the db server compares strings of text. 
+                3b. choosing utf8mb4_unicode_ci provides the widest range of comaprison sets in every language.
+                4c. choose your collation, and then click create to create a new DB.
+            2. create a new secure user account that can work with the DB
