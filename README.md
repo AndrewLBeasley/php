@@ -68,6 +68,6 @@ Follows Udemy php for beginners course step by step.
        a.  creates a copy of the initial db connection and only renders the data of one return
        b.  passing data in the url 
             b1.using the query string, which is whatever follows ?
-        c. Avoiding SQL injection.
-
+       c. Avoiding SQL injection.
+       d. extract repeated code. 
 

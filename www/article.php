@@ -1,10 +1,12 @@
 <?php 
 
 // all of the information needed to connect to the local db
-$db_host = 'localhost';
-$db_name = 'cms';
-$db_user = 'cms_www';
-$db_pass = 'andrew22';
+$database = include('config.php');
+
+$db_host = $database['host'];
+$db_name = $database['name'];
+$db_user = $database['user'];
+$db_pass = $database['pass'];
 
 // establishes connection to the DB using the mysqli_connect method.
 // connects to the db and returns a variable that represents a connection to the db server.
