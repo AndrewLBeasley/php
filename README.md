@@ -77,3 +77,6 @@ Follows Udemy php for beginners course step by step.
                     All data within a query string is just a string.
                     Require will stop a script when a file isnt found, include will keep executing the script forever. 
                     The web server can be configured using directives in .htaccess files
+
+    8. HTML Forms
+        a. Getting data from the user
