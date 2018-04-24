@@ -22,6 +22,9 @@
     <!-- use post for sensitive data. there is no size limit to data you can send with the post method. -->
     <!-- if you are just retrieving data from the web server, use get. -->
     <!-- if you are changing data on the server, use post -->
+
+    <!-- input elements with no type specified are simple text bodxes. must specify a type to establish what type of input controll is shown -->
+    <!-- if no type is specified, your input defaults to single line text field -->
     <form  method='post'>
         <input name='username' />
         <input name='password' type='password'/>
