@@ -80,3 +80,4 @@ Follows Udemy php for beginners course step by step.
 
     8. HTML Forms
         a. Getting data from the user
+        b. get v post
