@@ -45,14 +45,28 @@
     <!-- can also add [] to the end of checked, 'checked[]', and a value to send information about the box instead of adding a name -->
     <!-- to provide the user with an option where only one value can be selected, use a radio button. cannot toggle on/off -->
     <!-- add a name to radio button elements to make them work properly. add a value to be returned when the button is submitted. can also add checked -->
-    
+
+    <!-- to add a label to an element, specify an id in  a given element, and then specify that id in the label element using for='id' -->
+    <!-- clicking a label that is assigned to a given element will then focus the element that label is assigned to  -->
+    <!-- by wrapping an element to be labeled within a label, we dont have to use the for/id attributes to designate a label -->
+    <!-- use the fieldset element to group elements which are related in a form.places a box around designated controls.  -->
+    <!-- use the legend element to give a fieldset a title -->
+    <!-- use the placeholder element to add hint text to a desired text input -->
+
+    <!-- make an element readonly by adding the readonly attribute to an element -->
+    <!-- use disable to disable certain options within an element -->
+    <!-- use autofocus to make a certain element the focus of a form when the form is first loaded -->
     <form  method='post'>
-        <input name='username' />
-        <input name='password' type='password'/>
-        <textarea name='content'>Hello</textarea>
+        <fieldset>
+        <legend> text inputs </legend>
+            <label for='title' > username </label>
+            <input id='title' name='username' placeholder='username' readonly/>
+            <input name='password' type='password'/>
+            <textarea name='content' placeholder='content'></textarea>
+        </fieldset>
             <select name='cars[]' multiple>
                 <optgroup label = 'companies'>
-                    <option value='bmw'> BMW </option>
+                    <option value='bmw' disabled> BMW </option>
                     <option value='ford'> Ford </option>
                     <option value='chevy' selected>Chevy </option>
                 </optgroup>
@@ -63,3 +77,17 @@
     </form>
 </body>
 </html>
+
+<!-- Quiz and recap for forms in html5 -->
+<!-- specify an action in a form to dictate where submitted information is sent -->
+<!-- not specifying an action will cause the form to submit to itself -->
+<!-- use the $_GET method when retrieving information from a source and nothing is changing on the server -->
+<!-- use the $_POST method on server actions that need to be kept private and keep data from displaying in the query string -->
+<!-- anchor tags cannot be used to submit a form -->
+<!-- use the textarea element when a user may need to use multiple lines of text -->
+<!-- use the selected attributes when establishing a default selection in a form -->
+<!-- 'on' is the default value for a checkbox when it is submitted -->
+<!-- use radio buttons when the user should only be allowed to choose one option at a time -->
+<!-- lists with multiple radio buttons must all share the same value for the name attribute in order to designate single selection -->
+<!-- use the label element to make the label text of an associated element clickable -->
+<!-- associate a label with an input by specifying an id in the input, and referencing that input with the for attribute in the label -->

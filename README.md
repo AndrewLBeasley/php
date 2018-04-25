@@ -85,3 +85,8 @@ Follows Udemy php for beginners course step by step.
         d. multi-line text controll with text-area element
         e. the select element
         f. checkboxes
+        g. radio buttons
+        h. labels
+        i. fieldsets and placeholders
+        j. common form controll attributes
+        k. form validation
