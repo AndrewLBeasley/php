@@ -1,20 +1,14 @@
 <?php
+    //requires database connection information
+    //allows for the database connection to be established only when it is needed.
+    require 'includes/database.php';
+     
+
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        //must include the database connection wherever you are going to be making calls to the database
-        $database = include('./includes/config.php');
-            $db_host = $database['host'];
-            $db_name = $database['name'];
-            $db_user = $database['user'];
-            $db_pass = $database['pass'];
-
-            $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-
-            if(mysqli_connect_error()){
-                echo mysqli_connect_error();
-                exit;
-                //calling exit will stop the script from firing.
-                //if the connection fails we dont want to continue executing the script. 
-            };
+        //calls the database function from database.php only when it is needed.
+        //assigns the DB connection information to a variable so that it can be used throughout the script. 
+        $conn = getDB();
+        
         //use the mysqli_escape_string function to avoid sql injections.
         //good for use with short sql statements
         //to use prepared statements, change the SQL statement to use placeholders

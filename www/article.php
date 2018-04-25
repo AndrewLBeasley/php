@@ -1,29 +1,9 @@
 <?php 
+//requires database connection information
+//allows for the database connection to be established only when it is needed.
+require 'includes/database.php';
 
-// all of the information needed to connect to the local db
-//use include to save the DB information from the config file to a variable for use in the current file. 
-$database = include('./includes/config.php');
-
-$db_host = $database['host'];
-$db_name = $database['name'];
-$db_user = $database['user'];
-$db_pass = $database['pass'];
-
-// establishes connection to the DB using the mysqli_connect method.
-// connects to the db and returns a variable that represents a connection to the db server.
-//mysqli_connect parameters must be passed in IN THE ORDER BELOW
-$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-
-//use the mysqli_connect_error method to check your new connection.
-//returns a string if the connection fail, and returns null if the connection was successful.
-//an error will return a string with info about the error, therefor firing the conditional and printing the error message.
-if(mysqli_connect_error()){
-    echo mysqli_connect_error();
-    exit;
-    //calling exit will stop the script from firing.
-    //if the connection fails we dont want to continue executing the script. 
-}
-// echo 'connected successfully';
+$conn = getDB();
 
 //creates variable with SQL query that pulls one article from the database that matches the query.
 //uses superglobal $_GET to find values with queried id

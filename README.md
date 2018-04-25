@@ -101,3 +101,4 @@ Follows Udemy php for beginners course step by step.
 
     10. Functions and validations in PHP
         a. define and call a function
+        b. create a function to connect the database
