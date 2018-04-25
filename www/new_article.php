@@ -5,24 +5,34 @@
 
     //creates variable to hold error messages
     $error = [];
+
+    //sets global values to hold data returned from the post array.
+    //this data can then be used throughout the script using these variables
+    $title = '';
+    $content ='';
+    $published_at = '';
      
     //checks the request method
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            
+        
+        //assigns the data from the post array to respective variables.
+        $title = $_POST['title'];
+        $content = $_POST['content'];
+        $published_at = $_POST['published_at'];
 
-            if($_POST['title']==''){
+            
+            //error will be submitted if no data for title is supplied
+            if($title == ''){
                 //appends error message to the $error variable using the $error[] method.
                 $error[] = 'Title is required';
             };
 
-            if($_POST['content'] == ''){
+            //error will be submitted if no data for content is supplied.
+            if($content == ''){
                 $error[] = 'Content is required';
             };
 
     if(empty($errors)){
-
-            
-
 
         //calls the database function from database.php only when it is needed.
         //assigns the DB connection information to a variable so that it can be used throughout the script. 
@@ -42,7 +52,7 @@
             }else{
                 //binds params to our established placeholders
                 //parameters are inserted via SQL on the database server, not in php
-                mysqli_stmt_bind_param($stmt, 'sss', $_POST['title'], $_POST['content'], $_POST['published_at']);
+                mysqli_stmt_bind_param($stmt, 'sss', $title, $content, $published_at);
 
                 //executes prepared statement
                 if(mysqli_stmt_execute($stmt)){
@@ -88,17 +98,17 @@
     <form method='post'>
     <div>
         <label for='title'> Title </label>
-        <input name='title' id='title' placeholder='Article Title'>
+        <input name='title' id='title' placeholder='Article Title' value="<?=$title; ?>"
     </div>
 
     <div>
         <label for='content'> Content </textarea>
-        <textarea name='content' rows='4' cols='40' id='content' placeholder='Article Content'></textarea>
+        <textarea name='content' rows='4' cols='40' id='content' placeholder='Article Content'><?=$content; ?></textarea>
     </div>
 
     <div>
         <label for='published_at'> Publication date and time</label>
-        <input type='datetime-local' name='published_at' id='published_at'>
+        <input type='datetime-local' name='published_at' id='published_at' value="<?=$published_at; ?>">
     </div>
 
         <button> Add </button>

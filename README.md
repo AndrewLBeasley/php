@@ -104,3 +104,4 @@ Follows Udemy php for beginners course step by step.
         b. create a function to connect the database
         c. validate the form data and display relevant error messages
         d. previously supplied data
+        e. maintain previously supplied data
