@@ -93,3 +93,5 @@ Follows Udemy php for beginners course step by step.
 
     9. Insert data into a database using PHP
         a. using a form to insert new data
+        b. SQL insert into
+        c. insert a new article and get the id of the new entry

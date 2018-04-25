@@ -23,7 +23,7 @@ if(mysqli_connect_error()){
     //calling exit will stop the script from firing.
     //if the connection fails we dont want to continue executing the script. 
 }
-echo 'connected successfully';
+// echo 'connected successfully';
 
 //creates variable with SQL query that pulls one article from the database that matches the query.
 //uses superglobal $_GET to find values with queried id
