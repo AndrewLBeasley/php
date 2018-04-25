@@ -29,7 +29,7 @@ if($results === false){
 ?>
 <!-- requires header.php -->
 <?php require './includes/header.php';?>
-
+<a href="new_article.php"> New Article </a>
 <!-- checks to see if there is any content to post. if there is not, the message will display -->
     <?php if(empty($articles)):?>
         <p> No articles found </p>
@@ -39,8 +39,8 @@ if($results === false){
                 <?php foreach($articles as $article): ?>
                     <li>
                         <article>
-                            <h2><a href='article.php?id=<?= $article['id'];?>'><?=$article['title'];?></a></h2>
-                            <h4><?=$article['content'];?></h4>
+                            <h2><a href='article.php?id=<?= $article['id'];?>'><?=htmlspecialchars($article['title']);?></a></h2>
+                            <h4><?=htmlspecialchars($article['content']);?></h4>
                         </article>
                     </li>
                 <?php endforeach; ?>
@@ -49,7 +49,7 @@ if($results === false){
 <!-- requires footer.php -->
     <?php require './includes/footer.php';?>
 
-<!-- DB Quiz and recap -->
+<!-- DB connection Quiz and recap -->
 <!-- data in a relational database is represented in tables -->
 <!-- use sql SELECT to select data from a database -->
 <!-- use WHERE to specify a condition when selecting data with an SQL query -->

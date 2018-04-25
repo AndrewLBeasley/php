@@ -105,3 +105,7 @@ Follows Udemy php for beginners course step by step.
         c. validate the form data and display relevant error messages
         d. previously supplied data
         e. maintain previously supplied data
+        f. cross-site scripting attacks, avoid these using htmlspecialchars
+        g. insterting null for publication date
+        h. validate publication date as valid date and time
+        i. redirect to a new page on submission

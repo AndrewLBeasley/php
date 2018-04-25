@@ -21,3 +21,11 @@ $value = showMessage(true);
 echo $value;
 
 
+// functions Quiz and recap
+// functions can return values generated within them by using the return statement.
+// code after a return statement is not executed.
+// code inside of a function is executed when the function is called.
+// use the htmlspecialchars function to avoid XSS attacks whenever you are displaying data from an untrusted source.
+// the return statement can be used inside of a function as many times as you like, under certain circumstances. 
+// use the header function when redirecting from another page in php
+

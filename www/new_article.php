@@ -32,6 +32,21 @@
                 $error[] = 'Content is required';
             };
 
+            //checks to make sure value for $published_at is in the correct format.
+            if($published_at != ''){
+                //if $published_at is not empty, creates new date and time format.
+                $date_time = date_create_from_format('Y-m-d H:i:s', $published_at);
+
+                //if $date_time is false, submits an error to the error array.
+                if($date_time == false){
+                    $error[] = 'Invalid date and time';
+                }else{
+                    $date_errors = date_get_last_errors();
+
+                    var_dump($date_errors); exit;
+                }
+            };
+
     if(empty($errors)){
 
         //calls the database function from database.php only when it is needed.
@@ -50,6 +65,12 @@
             if($stmt === false){
                 echo mysqli_error($conn);
             }else{
+
+                //if the given value for $published_at is empty, assigns value of null to the variable. 
+                if($published_at == ''){
+                    $published_at = null;
+                };
+
                 //binds params to our established placeholders
                 //parameters are inserted via SQL on the database server, not in php
                 mysqli_stmt_bind_param($stmt, 'sss', $title, $content, $published_at);
@@ -57,7 +78,19 @@
                 //executes prepared statement
                 if(mysqli_stmt_execute($stmt)){
                     $id = mysqli_insert_id($conn);
-                    echo "inserted record with ID: $id";
+
+                    //checks for the servers protocol
+                    if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off'){
+                        $protocol = 'https';
+                    }else{
+                        $protocol = 'http';
+                    };
+
+                    //uses the header function to take the returned id and redirect the user to the recently submitted article.
+                    //takes information regarding server protocol and host to redirect using the direct url.
+                    header("Location:$protocol://" . $_SERVER['HTTP_HOST'] . "/article.php?id=$id");
+                    exit;
+
                 }else{
                     echo mysqli_error($stmt);
                 };
@@ -98,17 +131,17 @@
     <form method='post'>
     <div>
         <label for='title'> Title </label>
-        <input name='title' id='title' placeholder='Article Title' value="<?=$title; ?>"
+        <input name='title' id='title' placeholder='Article Title' value="<?= htmlspecialchars($title); ?>"
     </div>
 
     <div>
         <label for='content'> Content </textarea>
-        <textarea name='content' rows='4' cols='40' id='content' placeholder='Article Content'><?=$content; ?></textarea>
+        <textarea name='content' rows='4' cols='40' id='content' placeholder='Article Content'><?= htmlspecialchars($content); ?></textarea>
     </div>
 
     <div>
         <label for='published_at'> Publication date and time</label>
-        <input type='datetime-local' name='published_at' id='published_at' value="<?=$published_at; ?>">
+        <input type='datetime-local' name='published_at' id='published_at' value="<?=htmlspecialchars($published_at); ?>">
     </div>
 
         <button> Add </button>
