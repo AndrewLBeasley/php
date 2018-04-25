@@ -90,3 +90,6 @@ Follows Udemy php for beginners course step by step.
         i. fieldsets and placeholders
         j. common form controll attributes
         k. form validation
+
+    9. Insert data into a database using PHP
+        a. using a form to insert new data
