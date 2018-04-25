@@ -95,3 +95,9 @@ Follows Udemy php for beginners course step by step.
         a. using a form to insert new data
         b. SQL insert into
         c. insert a new article and get the id of the new entry
+        d. sql injection attacks
+        e. preventing sql injection, input escaping, mysqli_escape_string
+        f. prepared statements
+
+    10. Functions and validations in PHP
+        a. define and call a function

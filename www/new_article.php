@@ -15,20 +15,29 @@
                 //calling exit will stop the script from firing.
                 //if the connection fails we dont want to continue executing the script. 
             };
-
+        //use the mysqli_escape_string function to avoid sql injections.
+        //good for use with short sql statements
+        //to use prepared statements, change the SQL statement to use placeholders
         $insert = "INSERT INTO article (title, content, published_at)
-                    VALUES('" . $_POST['title'] . "','"
-                              . $_POST['content'] . "','"
-                              . $_POST['published_at'] . "')";
+                    VALUES(?, ?, ?)";
         
+        //to use prepared statements, change the mysqli_query to use mysqli_prepare
+        $stmt = mysqli_prepare($conn, $insert);
 
-        $results = mysqli_query($conn, $insert);
-
-            if($results === false){
+            if($stmt === false){
                 echo mysqli_error($conn);
             }else{
-                $id = mysqli_insert_id($conn);
-                echo "inserted record with ID: $id";
+                //binds params to our established placeholders
+                //parameters are inserted via SQL on the database server, not in php
+                mysqli_stmt_bind_param($stmt, 'sss', $_POST['title'], $_POST['content'], $_POST['published_at']);
+
+                //executes prepared statement
+                if(mysqli_stmt_execute($stmt)){
+                    $id = mysqli_insert_id($conn);
+                    echo "inserted record with ID: $id";
+                }else{
+                    echo mysqli_error($stmt);
+                };
             };
     };
 
@@ -40,6 +49,13 @@
     //VALUES(1, 2), (3, 4), etc...
     //allows the user to insert multiple values with one insert statement
    
+    //Quiz and recap for inserting data into the database
+    //use $_SERVER['REQUEST_METHOD'] to check which method a form is using to interact with the database
+    //insert multiple records at once by calling VALUES(1, 2), (3, 4), etc
+    //to get the id of a newly inserted record, use mysqli_insert_id
+    //sql injection attacks occur when values are inserted into an SQL string that contains quotes. 
+    //question marks are used as placeholders in MYSQLI prepared statements.
+    //
 ?>
 
 <?php require 'includes/header.php'; ?>
