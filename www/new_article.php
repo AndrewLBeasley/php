@@ -2,9 +2,28 @@
     //requires database connection information
     //allows for the database connection to be established only when it is needed.
     require 'includes/database.php';
-     
 
+    //creates variable to hold error messages
+    $error = [];
+     
+    //checks the request method
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            
+
+            if($_POST['title']==''){
+                //appends error message to the $error variable using the $error[] method.
+                $error[] = 'Title is required';
+            };
+
+            if($_POST['content'] == ''){
+                $error[] = 'Content is required';
+            };
+
+    if(empty($errors)){
+
+            
+
+
         //calls the database function from database.php only when it is needed.
         //assigns the DB connection information to a variable so that it can be used throughout the script. 
         $conn = getDB();
@@ -33,6 +52,7 @@
                     echo mysqli_error($stmt);
                 };
             };
+        };
     };
 
     //SQL insert into statement
@@ -55,6 +75,15 @@
 <?php require 'includes/header.php'; ?>
 
     <h2> New Article </h2>
+
+    <!-- dumps error messages -->
+    <?php if(! empty($error)): ?>
+        <ul>
+            <?php foreach ($error as $errors):?>
+                <li> <?=$errors?></li>
+            <?php endforeach ?>
+        </ul>
+    <?php endif; ?>
 
     <form method='post'>
     <div>
