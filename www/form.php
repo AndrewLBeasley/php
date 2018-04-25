@@ -38,7 +38,14 @@
     <!-- in order to group multiple options, wrap the options in the optgroup element -->
     <!-- add a label to the optgroup element to signify each group -->
     <!-- to set a default value for selection, add the selected attribute to the option which you want to default. can add multiple selected attributes -->
-
+    <!-- use checkboxes to provide users with a binary choice. checkbox is an input element with the type checkbox -->
+    <!-- supply a name to the checkbox to get the value of the checkbox when it is submitted. returns the name of the checkbox with the value of 'on' -->
+    <!-- can specify a value to be submitted when a checkbox is submitted. can also default the box to 'checked' using the checked attribute-->
+    <!-- to add a label to the checkbox, add text to the end of the element -->
+    <!-- can also add [] to the end of checked, 'checked[]', and a value to send information about the box instead of adding a name -->
+    <!-- to provide the user with an option where only one value can be selected, use a radio button. cannot toggle on/off -->
+    <!-- add a name to radio button elements to make them work properly. add a value to be returned when the button is submitted. can also add checked -->
+    
     <form  method='post'>
         <input name='username' />
         <input name='password' type='password'/>
@@ -50,6 +57,8 @@
                     <option value='chevy' selected>Chevy </option>
                 </optgroup>
             </select>
+        <input type='checkbox'  'checked[]' value='yes' /> check me out
+        <input name='red' value='red' type='radio'/>
         <button>send</button>
     </form>
 </body>
