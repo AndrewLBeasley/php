@@ -13,6 +13,7 @@ if(isset($_GET['id'])){
     //if $article is true, assign values to these variables
     //if false, kill the script and tell the user that the article is not found. 
     if($article){
+        $id = $article['id'];
         $title = $article['title'];
         $content = $article['content'];
         $published_at = $article['published_at'];
@@ -35,7 +36,53 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $errors = validateArticle($title, $content, $published_at);
 
 if(empty($errors)){
-        die('Form is valid');
+     
+    //use the mysqli_escape_string function to avoid sql injections.
+    //good for use with short sql statements
+    //to use prepared statements, change the SQL statement to use placeholders
+    $update = "UPDATE 
+                SET title = ?,
+                    content = ?,
+                    published_at = ?
+                WHERE id = ?";
+    
+    //to use prepared statements, change the mysqli_query to use mysqli_prepare
+    $stmt = mysqli_prepare($conn, $update);
+
+        if($stmt === false){
+            echo mysqli_error($conn);
+        }else{
+
+            //if the given value for $published_at is empty, assigns value of null to the variable. 
+            if($published_at == ''){
+                $published_at = null;
+            };
+
+            //binds params to our established placeholders
+            //parameters are inserted via SQL on the database server, not in php
+            mysqli_stmt_bind_param($stmt, 'sssi', $title, $content, $published_at, $id);
+
+            //executes prepared statement
+            if(mysqli_stmt_execute($stmt)){
+                
+
+                //checks for the servers protocol
+                if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off'){
+                    $protocol = 'https';
+                }else{
+                    $protocol = 'http';
+                };
+
+                //uses the header function to take the returned id and redirect the user to the recently submitted article.
+                //takes information regarding server protocol and host to redirect using the direct url.
+                header("Location:$protocol://" . $_SERVER['HTTP_HOST'] . "/article.php?id=$id");
+                exit;
+
+            }else{
+                echo mysqli_error($stmt);
+            };
+        };
+    };
 };
 
 ?>

@@ -114,3 +114,5 @@ Follows Udemy php for beginners course step by step.
         a. editing existing articles. 
         b. adding an edit form.
         c. validating edit form data
+        d. SQL UPDATE
+        e. update an existing article
