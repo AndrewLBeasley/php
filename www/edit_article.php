@@ -10,8 +10,25 @@ if(isset($_GET['id'])){
     //no longer needs to check is_numeric because we are using a prepared statement. 
     $article = getArticle($conn, $_GET['id']);
 
-}else{
-    $articles = null;
-}
+    //if $article is true, assign values to these variables
+    //if false, kill the script and tell the user that the article is not found. 
+    if($article){
+        $title = $article['title'];
+        $content = $article['content'];
+        $published_at = $article['published_at'];
+    }else{
+        die('article not found');
+    };
 
-var_dump($article);
+}else{
+    die('id not supplied, article not found');
+};
+
+?>
+<?php require 'includes/header.php'; ?>
+
+<h2> Edit Article </h2>
+
+<?php require 'includes/article_form.php'; ?>
+
+<?php require 'includes/footer.php'; ?>
