@@ -113,3 +113,4 @@ Follows Udemy php for beginners course step by step.
     11. Editing data in the database in php
         a. editing existing articles. 
         b. adding an edit form.
+        c. validating edit form data

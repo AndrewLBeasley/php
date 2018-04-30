@@ -28,3 +28,34 @@ function getArticle($conn, $id){
         };
     };
 };
+
+
+//function that validates article properties
+function validateArticle($title, $content, $published_at){
+    $error = [];
+    if($title == ''){
+        //appends error message to the $error variable using the $error[] method.
+        $error[] = 'Title is required';
+    };
+
+    //error will be submitted if no data for content is supplied.
+    if($content == ''){
+        $error[] = 'Content is required';
+    };
+
+    //checks to make sure value for $published_at is in the correct format.
+    if($published_at != ''){
+        //if $published_at is not empty, creates new date and time format.
+        $date_time = date_create_from_format('Y-m-d H:i:s', $published_at);
+
+        //if $date_time is false, submits an error to the error array.
+        if($date_time == false){
+            $error[] = 'Invalid date and time';
+        }else{
+            $date_errors = date_get_last_errors();
+
+            var_dump($date_errors); exit;
+        }
+    };
+    return $error;
+};
