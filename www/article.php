@@ -2,7 +2,7 @@
 //requires database connection information
 //allows for the database connection to be established only when it is needed.
 require 'includes/database.php';
-
+require 'includes/article.php';
 $conn = getDB();
 
 //creates variable with SQL query that pulls one article from the database that matches the query.
@@ -12,28 +12,10 @@ $conn = getDB();
 //use the isset function to determine whether a variable is set and not null. 
 //if the query string is set, and is numeric, the GET array will make a valid return
 
-if(isset($_GET['id']) && is_numeric($_GET['id'])){
-$sql = 'SELECT*
-        FROM article
-        WHERE id = ' . $_GET['id'];
-    ;
-
-
-
-//creates $results variable which will hold the results of the above query.
-//passes in connnection variable and sql statement.
-//will return false if there is an error retrieving the data. 
-$results = mysqli_query($conn, $sql);
-
-//if the query returns false, php will echo the error message.
-//must use strictly equals to perform the comparison to avoid edge cases of false being returned for values of null or empty arrays.
-if($results === false){
-    echo mysqli_error($conn);
-}else{
-    //uses mysqli_fetch_assoc to pull one row from the db table
-    $article = mysqli_fetch_assoc($results);
-    // var_dump($articles);
-}
+if(isset($_GET['id'])){
+    //calls the getArticle function from the article.php script
+    //no longer needs to check is_numeric because we are using a prepared statement. 
+    $article = getArticle($conn, $_GET['id']);
 
 }else{
     $articles = null;

@@ -109,3 +109,7 @@ Follows Udemy php for beginners course step by step.
         g. insterting null for publication date
         h. validate publication date as valid date and time
         i. redirect to a new page on submission
+
+    11. Editing data in the database in php
+        a. editing existing articles. 
+        b. adding an edit form.
